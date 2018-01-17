@@ -2,7 +2,7 @@
 
 angular.module('myApp').factory('HotelService', ['$http', '$q', function($http, $q){
 
-    var REST_SERVICE_URI = 'http://localhost:8080/ExpediaOffers/getOffers/v1';
+    var REST_SERVICE_URI = 'hhttps://demo-rest-1.herokuapp.com/getOffers/v1';
 
     
     var factory = {
