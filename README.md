@@ -12,5 +12,5 @@
 * 
 
 ### TODO
-Change project to SpringBoot
-More creatieve desing to consume the rest
+* Change project to SpringBoot
+* More creatieve desing to consume the rest
