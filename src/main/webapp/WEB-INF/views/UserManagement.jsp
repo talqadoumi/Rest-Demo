@@ -317,10 +317,11 @@ star-rating {
 									<div class="modal-content">
 										<div class="modal-header">
 											<button type="button" class="close" data-dismiss="modal">&times;</button>
-											<h4 class="modal-title">{{info.destination.longName}}</h4>
+											<h4 class="modal-title">{{selectedInfo.destination.longName}}</h4>
 										</div>
 										<div class="modal-body">
-											<p>{{info.destination.longName}}</p>
+											<p>{{selectedInfo.destination.longName}}</p>
+											{{test}}
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-default"

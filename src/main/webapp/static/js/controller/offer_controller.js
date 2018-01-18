@@ -12,7 +12,8 @@ $scope.getAllInfo = function(allInfo)
 {
 	
 	
-	$scope.info =allInfo;
+	$scope.selectedInfo =allInfo;
+	$scope.test =allInfo.destination.longName;
 	$('#infoModel').modal('show')	
 	
 	
