@@ -211,6 +211,10 @@ star-rating {
 				<span class="lead">List of Hotels </span>
 			</div>
 
+
+
+
+
 			<div class="tablecontainer row">
 
 				<div class="card col-md-4 pb-2" ng-repeat="h in hotels">
@@ -231,27 +235,7 @@ star-rating {
 						
 						</ul>
 
-							<!-- Modal -->
-							<div class="modal fade" id="myModal" role="dialog">
-								<div class="modal-dialog">
-
-									<!-- Modal content-->
-									<div class="modal-content">
-										<div class="modal-header">
-											<button type="button" class="close" data-dismiss="modal">&times;</button>
-											<h4 class="modal-title">{{h.hotelInfo.hotelName}}</h4>
-										</div>
-										<div class="modal-body">
-											<p>{{h.destination.longName}}</p>
-										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-default"
-												data-dismiss="modal">Close</button>
-										</div>
-									</div>
-
-								</div>
-							</div>
+		
 
 
 					</div>
@@ -261,8 +245,7 @@ star-rating {
 					<a href="{{decode(h.hotelUrls.hotelInfositeUrl)}}" target="blank"
 						class="btn btn-primary">Visit Hotel</a>
 					<!-- Trigger the modal with a button -->
-					<button type="button" class="btn btn-primary" data-toggle="modal"
-						data-target="#myModal">See More</button>
+					<button type="button" class="btn btn-primary" ng-click="getAllInfo(h)">See More</button>
 
 
 				</div>
@@ -326,7 +309,27 @@ star-rating {
 				</table> -->
 		</div>
 	</div>
+					<!-- Modal -->
+							<div class="modal fade" id="infoModel" role="dialog">
+								<div class="modal-dialog">
 
+									<!-- Modal content-->
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal">&times;</button>
+											<h4 class="modal-title">{{info.destination.longName}}</h4>
+										</div>
+										<div class="modal-body">
+											<p>{{info.destination.longName}}</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default"
+												data-dismiss="modal">Close</button>
+										</div>
+									</div>
+
+								</div>
+							</div>
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
 	<script src="<c:url value='/static/js/app.js' />"></script>

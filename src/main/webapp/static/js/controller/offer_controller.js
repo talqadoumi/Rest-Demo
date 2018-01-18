@@ -7,7 +7,18 @@ angular.module('myApp').controller('HotelController',
 $scope.decode = function(url) {
 	return decodeURIComponent(url)
 }
+		
+$scope.getAllInfo = function(allInfo) 
+{
+	
+	
+	$scope.info =allInfo;
+	$('#infoModel').modal('show')	
+	
+	
+}
 			   
+	
 			
 			$scope.param = {regionIds:null,address:null};
 			$scope.hotels = [];
