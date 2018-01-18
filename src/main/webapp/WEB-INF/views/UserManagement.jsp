@@ -319,9 +319,9 @@ star-rating {
 											<button type="button" class="close" data-dismiss="modal">&times;</button>
 											<h4 class="modal-title">{{selectedInfo.destination.longName}}</h4>
 										</div>
-										<div class="modal-body">
-											<p>{{selectedInfo.destination.longName}}</p>
-											{{test}}
+										<div class="modal-body" >
+											<p  ng-repeat="h in selectedInfo">{{h.destination.longName}}</p>
+											
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-default"
