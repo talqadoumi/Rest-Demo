@@ -16,7 +16,7 @@ import com.expedia.controller.OffersRestController;
 import com.expedia.service.HotelServiceImpl;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration({ "classpath:test-context.xml"})
+@ContextConfiguration({ "classpath:test-context.xml" })
 
 public class OffersControllerTest {
 
@@ -48,7 +48,7 @@ public class OffersControllerTest {
 	@Test
 	public void getOffersWithQueryParameter() throws Exception {
 
-		mockMvc.perform(get(restEndPoint+"?regionIds=333333")).andExpect(MockMvcResultMatchers.status().is(204));
+		mockMvc.perform(get(restEndPoint + "?regionIds=333333")).andExpect(MockMvcResultMatchers.status().is(204));
 
 	}
 

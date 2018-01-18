@@ -39,8 +39,7 @@ public class OffersRestController {
 		if (hotelsOffers.getOffers().getHotel() == null) {
 
 			logger.info(" Calling Rest No Offers was Found ");
-			return new ResponseEntity<OfferResponse>(HttpStatus.NO_CONTENT);// You many decide to return
-																			// HttpStatus.NOT_FOUND
+			return new ResponseEntity<OfferResponse>(HttpStatus.NO_CONTENT);
 		} else 
 		{
 			logger.info("After Calling Rest offers exist ");

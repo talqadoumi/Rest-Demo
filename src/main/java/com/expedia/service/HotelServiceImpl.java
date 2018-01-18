@@ -1,4 +1,5 @@
 package com.expedia.service;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,22 +25,21 @@ public class HotelServiceImpl implements HotelService {
 	@Override
 	public OfferResponse getHotelsOffers(MultiValueMap<String, String> requestParams) {
 
-		logger.info("Start calling " + restUrl);
+		logger.info("Start calling Expedia Rest End Point");
 		logger.info("Query Parameters   " + requestParams);
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
-		UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl("https://offersvc.expedia.com/offers/v2/getOffers?scenario=deal-finder&page=foo&uid=foo&productType=Hotel").queryParams(requestParams);
+		UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(
+				"https://offersvc.expedia.com/offers/v2/getOffers?scenario=deal-finder&page=foo&uid=foo&productType=Hotel")
+				.queryParams(requestParams);
 
 		HttpEntity<?> entity = new HttpEntity<>(headers);
 		RestTemplate restTemplate = new RestTemplate();
-		System.err.println(restUrl);
+
 		OfferResponse offerResponse = restTemplate
 				.exchange(builder.build().encode().toUri(), HttpMethod.GET, entity, OfferResponse.class).getBody();
 
-		
-		
-		
 		return offerResponse;
 
 	}
