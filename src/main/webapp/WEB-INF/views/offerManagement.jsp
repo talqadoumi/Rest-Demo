@@ -224,62 +224,7 @@ star-rating {
 				</div>
 			</div>
 
-			<!-- 	<table class="table table-hover">
-					<thead>
-						<tr class="tablerowfontsize">
-							<th class="tableth">Hotel Name</th>
-							<th class="tableth">Hotel Address</th>
-
-							<th class="tableth">Star Rating</th>
-							<th class="tableth">Guest Review Rating</th>
-							<th class="tableth">Travel Start Date</th>
-							<th class="tableth">Travel End Date</th>
-							<th class="tableth">Vip Access</th>
-							<th class="tableth">Currency</th>
-							<th class="tableth">Total Price Value</th>
-							<th class="tableth">Average Price Value</th>
-
-							<th class="tableth">Price Per Night</th>
-							<th class="tableth">Percent Savings</th>
-							<th class="tableth">Number Of People Booked</th>
-							<th class="tableth">Left Rooms</th>
-
-
-
-							<th width="5%"></th>
-						</tr>
-					</thead>
-					
-					<tbody>
-					
-					
-					
-						<tr class="tablerowfontsize" ng-repeat="h in hotels">
-
-							<td><span ng-bind="h.destination.longName">{{h.destination.longName}}</span>
-							
-							</td>
-							<td><span ng-bind="h.longName"></span></td>
-							<td><span ng-bind="h.hotelStarRating"></span></td>
-							<td><span ng-bind="h.hotelGuestReviewRating"></span></td>
-
-							<td><span ng-bind="h.startDate"></span></td>
-							<td><span ng-bind="h.endDate"></span></td>
-							<td><span ng-bind="h.vipAccess"></span></td>
-
-							<td><span ng-bind="h.currency"></span></td>
-							<td><span ng-bind="h.totalPriceValue"></span></td>
-							<td><span ng-bind="h.averagePriceValue"></span></td>
-
-							<td><span ng-bind="h.originalPricePerNight"></span></td>
-							<td><span ng-bind="h.percentSavings"></span></td>
-							<td><span ng-bind="h.numberOfPeopleBooked"></span></td>
-							<td><span ng-bind="h.numberOfRoomsLeft"></span></td>
-
-
-						</tr>
-					</tbody>
-				</table> -->
+			
 		</div>
 		
 			<!-- Modal -->
@@ -290,13 +235,31 @@ star-rating {
 									<div class="modal-content">
 										<div class="modal-header">
 											<button type="button" class="close" data-dismiss="modal">&times;</button>
-											<h4 class="modal-title">{{selectedInfo.destination.longName}}</h4>
+											<h4 class="modal-title">{{selectedInfo.hotelInfo.hotelName}},{{selectedInfo.hotelInfo.hotelCity}}/h4>
 										</div>
 										<div class="modal-body" >
-											<p>{{selectedInfo.destination.longName}}</p>
-											{{destinationLlongName}}
-											<!-- ng-repeat="h in selectedInfo" -->
-										</div>
+											
+											
+                             <ul class="list-group">
+							<li class="list-group-item">Address : {{selectedInfo.destination.longName}}</li>
+							  <li class="list-group-item">Start Date : {{selectedInfo.offerDateRange.travelStartDate}}</li>
+							<li class="list-group-item">End Date : {{selectedInfo.offerDateRange.travelEndDate}} </li>
+						   							<li class="list-group-item">Length Of Stay : {{selectedInfo.offerDateRange.lengthOfStay}} </li>
+						   
+						   
+						   	<li class="list-group-item">Total Price Value : {{selectedInfo.hotelPricingInfo.totalPriceValue}} {{h.hotelPricingInfo.currency}}  </li>
+						   
+						   
+						   <li class="list-group-item">Original Price Per Night : {{selectedInfo.hotelPricingInfo.originalPricePerNight}} {{h.hotelPricingInfo.currency}}  </li>
+						   
+						   
+							<li class="list-group-item">Saving : {{selectedInfo.hotelPricingInfo.percentSavings}} {{h.hotelPricingInfo.currency}}    </li>
+						    
+						    <li class="list-group-item">Star Rating : {{selectedInfo.hotelInfo.hotelStarRating}}</li>
+						    <li class="list-group-item">Guest Rating : {{selectedInfo.hotelInfo.hotelGuestReviewRating}}</li>
+			  			
+			</ul>
+						</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-default"
 												data-dismiss="modal">Close</button>
