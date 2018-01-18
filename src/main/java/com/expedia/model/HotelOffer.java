@@ -1,5 +1,6 @@
 package com.expedia.model;
 import java.util.Map;
+
 import lombok.Data;
 /**
  * 

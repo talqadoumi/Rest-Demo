@@ -1,6 +1,7 @@
 package com.expedia.test;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,6 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
 import com.expedia.controller.OffersRestController;
 import com.expedia.service.HotelServiceImpl;
 
