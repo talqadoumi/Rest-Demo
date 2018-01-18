@@ -29,11 +29,11 @@ public class HotelServiceImpl implements HotelService {
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
-		UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(restUrl).queryParams(requestParams);
+		UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl("https://offersvc.expedia.com/offers/v2/getOffers?scenario=deal-finder&page=foo&uid=foo&productType=Hotel").queryParams(requestParams);
 
 		HttpEntity<?> entity = new HttpEntity<>(headers);
 		RestTemplate restTemplate = new RestTemplate();
-
+		System.err.println(restUrl);
 		OfferResponse offerResponse = restTemplate
 				.exchange(builder.build().encode().toUri(), HttpMethod.GET, entity, OfferResponse.class).getBody();
 

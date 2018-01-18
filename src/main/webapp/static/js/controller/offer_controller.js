@@ -2,8 +2,9 @@
 
 angular.module('myApp').controller('HotelController',
 		[ '$scope', 'HotelService', function($scope, HotelService) {
-
-			
+			$scope.showModel=false;
+			$scope.selectedInfo={}
+			$scope.destinationLlongName='destinationLlongName'
 $scope.decode = function(url) {
 	return decodeURIComponent(url)
 }
@@ -14,6 +15,10 @@ $scope.getAllInfo = function(allInfo)
 	
 	$scope.selectedInfo =allInfo;
 	$scope.test =allInfo.destination.longName;
+	//$scope.destinationLlongName=allInfo.destination.longName
+	
+	
+	
 	$('#infoModel').modal('show')	
 	
 	

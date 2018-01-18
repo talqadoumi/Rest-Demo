@@ -24,29 +24,8 @@ star-rating {
 	color: yellow;
 }
 
-.username.ng-valid {
-	background-color: lightgreen;
-}
 
-.username.ng-dirty.ng-invalid-required {
-	background-color: red;
-}
 
-.username.ng-dirty.ng-invalid-minlength {
-	background-color: yellow;
-}
-
-.email.ng-valid {
-	background-color: lightgreen;
-}
-
-.email.ng-dirty.ng-invalid-required {
-	background-color: red;
-}
-
-.email.ng-dirty.ng-invalid-email {
-	background-color: yellow;
-}
 </style>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -218,6 +197,7 @@ star-rating {
 			<div class="tablecontainer row">
 
 				<div class="card col-md-4 pb-2" ng-repeat="h in hotels">
+				
 					<img class="card-img-top" ng-src="{{h.hotelInfo.hotelImageUrl}}"
 						alt="Card image cap">
 					<div class="card-block">
@@ -231,21 +211,14 @@ star-rating {
 						    <li>Guest Rating : {{h.hotelInfo.hotelGuestReviewRating}}</li>
 			  			
 				
-						
-						
 						</ul>
 
 		
-
-
 					</div>
-
-
-
-					<a href="{{decode(h.hotelUrls.hotelInfositeUrl)}}" target="blank"
+          	<a href="{{decode(h.hotelUrls.hotelInfositeUrl)}}" target="blank"
 						class="btn btn-primary">Visit Hotel</a>
 					<!-- Trigger the modal with a button -->
-					<button type="button" class="btn btn-primary" ng-click="getAllInfo(h)">See More</button>
+					<button type="button" class="btn btn-primary"     ng-click="getAllInfo(h)">See More</button>
 
 
 				</div>
@@ -308,9 +281,9 @@ star-rating {
 					</tbody>
 				</table> -->
 		</div>
-	</div>
-					<!-- Modal -->
-							<div class="modal fade" id="infoModel" role="dialog">
+		
+			<!-- Modal -->
+							<div  class="modal fade" id="infoModel" role="dialog">
 								<div class="modal-dialog">
 
 									<!-- Modal content-->
@@ -320,8 +293,9 @@ star-rating {
 											<h4 class="modal-title">{{selectedInfo.destination.longName}}</h4>
 										</div>
 										<div class="modal-body" >
-											<p  ng-repeat="h in selectedInfo">{{h.destination.longName}}</p>
-											
+											<p>{{selectedInfo.destination.longName}}</p>
+											{{destinationLlongName}}
+											<!-- ng-repeat="h in selectedInfo" -->
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-default"
@@ -331,6 +305,10 @@ star-rating {
 
 								</div>
 							</div>
+		
+		
+	</div>
+				
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
 	<script src="<c:url value='/static/js/app.js' />"></script>

@@ -1,6 +1,6 @@
 package com.expedia.controller;
 
-import java.util.Map;
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,23 +12,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+
 import com.expedia.model.OfferResponse;
 import com.expedia.service.HotelService;
-
+@EnableWebMvc
 @RestController
-public class GetOffersRestController {
+@RequestMapping("/getOffers")
+public class OffersRestController {
 
-	private static final Logger logger = LoggerFactory.getLogger(GetOffersRestController.class);
+	private static final Logger logger = LoggerFactory.getLogger(OffersRestController.class);
 
 	@Autowired
 	HotelService hotelService;
 
-	@RequestMapping(value = "/getOffers/v1", method = RequestMethod.GET)
+	@RequestMapping(value = "/v1", method = RequestMethod.GET)
 	public ResponseEntity<OfferResponse> getAllOffers(@RequestParam MultiValueMap<String, String> requestParams) {
 
+		
+		
 		logger.info("Call /getOffers/v1/ rest endpoint ");
 
 		OfferResponse hotelsOffers = hotelService.getHotelsOffers(requestParams);
+
 
 		if (hotelsOffers.getOffers().getHotel() == null) {
 
